@@ -50,8 +50,23 @@ This project is built following **industry best practices** with **separated fro
 
 ## 🛠️ Technologies Used
 
+### 📂 Category
+| Category |
+|----------|
+| 🎨 Frontend |
+| ⚙️ Backend |
+| 🗄️ Database |
+| 🔐 Authentication |
+| 🖼️ Image Storage |
+| 📩 Form Handling |
+| 🔔 Notifications |
+| 🔧 Tools & Utils |
+
+---
+## 🛠️ Technologies Used
+
 | Category | Tech Stack |
-|--------|-----------|
+|----------|------------|
 | 🎨 Frontend | React.js, TailwindCSS, Vite |
 | ⚙️ Backend | Node.js, Express.js |
 | 🗄️ Database | MongoDB (Mongoose ORM) |
@@ -61,38 +76,70 @@ This project is built following **industry best practices** with **separated fro
 | 🔔 Notifications | React Hot Toast |
 | 🔧 Tools & Utils | Axios, React Router, dotenv, Postman |
 
+
+---
+
+### 🖼️ Tools (Icons)
+| Tool | Icon |
+|------|------|
+| React.js | ![React](https://skillicons.dev/icons?i=react) |
+| TailwindCSS | ![Tailwind](https://skillicons.dev/icons?i=tailwind) |
+| Vite | ![Vite](https://skillicons.dev/icons?i=vite) |
+| Node.js | ![Node.js](https://skillicons.dev/icons?i=nodejs) |
+| Express.js | ![Express](https://skillicons.dev/icons?i=express) |
+| MongoDB | ![MongoDB](https://skillicons.dev/icons?i=mongodb) |
+| JWT | ![JWT](https://img.shields.io/badge/JWT-black?logo=jsonwebtokens&logoColor=white) |
+| Cloudinary | ![Cloudinary](https://img.shields.io/badge/Cloudinary-4285F4?logo=cloudinary&logoColor=white) |
+| Web3Forms | ![Web3Forms](https://img.shields.io/badge/Web3Forms-teal?logo=web3&logoColor=white) |
+| React Hot Toast | 🔔 |
+| Axios | ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white) |
+| React Router | ![React Router](https://skillicons.dev/icons?i=react) |
+| dotenv | 🌱 |
+| Postman | ![Postman](https://skillicons.dev/icons?i=postman) |
+
+
 ---
 
 ## ⚙️ Installation & Setup
 
 ### 🔹 Clone the Repository
 ```bash
+
 git clone https://github.com/SaumikLaha/your-repo-name.git
 cd your-repo-name Blogsy_Web_App
 ```
 ### 🔹 Backend Setup
-
+```bash
 
 cd backend
 
 npm install
+```
+
 
 #### Create a .env file inside /backend:
+```bash
 
 MONGO_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret
+
 CLOUDINARY_CLOUD_NAME=your_cloud_name
+
 CLOUDINARY_API_KEY=your_api_key
+
 CLOUDINARY_API_SECRET=your_api_secret
+```
 
-#### Start backend server:
-
+### 🔹 Start backend server:
+```bash
 
 npm start
 
-
+```
 
 ### 🔹Frontend Setup:
+```bash
 
 cd frontend
 
@@ -100,22 +147,32 @@ npm install
 
 npm run dev
 
+```
 ## 📷 Screenshots
-🏠 Home Page
+### 🔐 Register Page
+![Register Page](Screenshots/Register.png)
 
-📰 Blogs Page
+### 🔑 Login Page
+![Login Page](Screenshots/Login.png)
 
-📄 Single Blog Page
+### 🏠 Home Page
+![Home Page](Screenshots/Home.png)
 
-👨‍💻 Creators Page
+### 📝 Single Blog Page
+![Single Blog](Screenshots/SingleBlog.png)
 
-📩 Contact Page
+### 👤 Creators Page
+![Creators](Screenshots/Creators.png)
 
-📊 Dashboard
+### 📄 About Page
+![About](Screenshots/About.png)
 
-🙍 My Profile
+### ☎️ Contact Page
+![Contact](Screenshots/Contact.png)
 
-📝 My Blogs
+### 📱 Mobile View
+![Mobile View 1](Screenshots/mobile-view-1.png)
+![Mobile View 2](Screenshots/mobile-view-2.png)
 
 
 
@@ -128,13 +185,14 @@ npm run dev
 
 
 ## 👨‍💻 Author
+```bash
 
 SAUMIK LAHA
 
-🔗 GitHub: https://github.com/SaumikLaha
+🔗 [GitHub Profile](https://github.com/SaumikLaha)
 
-🔗 LinkedIn: https://www.linkedin.com/in/saumik-laha-530883381/
-
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/saumik-laha-530883381/)
+```
 
 
 
