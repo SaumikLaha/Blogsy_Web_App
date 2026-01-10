@@ -148,7 +148,8 @@ npm install
 npm run dev
 
 ```
-## 📷 Screenshots
+## 📸 Screenshots
+
 ### 🔐 Register Page
 ![Register Page](Screenshots/Register.png)
 
@@ -159,20 +160,21 @@ npm run dev
 ![Home Page](Screenshots/Home.png)
 
 ### 📝 Single Blog Page
-![Single Blog](Screenshots/SingleBlog.png)
+![Single Blog Page](Screenshots/SingleBlog.png)
 
 ### 👤 Creators Page
-![Creators](Screenshots/Creators.png)
+![Creators Page](Screenshots/Creators.png)
 
 ### 📄 About Page
-![About](Screenshots/About.png)
+![About Page](Screenshots/About.png)
 
 ### ☎️ Contact Page
-![Contact](Screenshots/Contact.png)
+![Contact Page](Screenshots/Contact.png)
 
 ### 📱 Mobile View
-![Mobile View 1](Screenshots/mobile-view-1.png)
-![Mobile View 2](Screenshots/mobile-view-2.png)
+![Mobile View 1](Screenshots/MobileView1.png)
+![Mobile View 2](Screenshots/MobileView2.png)
+
 
 
 
@@ -185,14 +187,14 @@ npm run dev
 
 
 ## 👨‍💻 Author
-```bash
 
-SAUMIK LAHA
+**Saumik Laha**
+## 👨‍💻 Author
 
-🔗 [GitHub Profile](https://github.com/SaumikLaha)
+**SAUMIK LAHA**
 
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/saumik-laha-530883381/)
-```
+[GitHub](https://github.com/SaumikLaha) &nbsp;|&nbsp;
+[LinkedIn](https://www.linkedin.com/in/saumik-laha-530883381/)
 
 
 
