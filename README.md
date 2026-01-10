@@ -150,30 +150,37 @@ npm run dev
 ```
 ## 📸 Screenshots
 
-### 🔐 Register Page
-![Register Page](Screenshots/Register.png)
+<table>
+  <tr>
+    <th>Register</th>
+    <th>Login</th>
+    <th>Home</th>
+    <th>Blogs</th>
+    <th>Single Blog</th>
+  </tr>
+  <tr>
+    <td><img src="Screenshots/Register.png" width="180"/></td>
+    <td><img src="Screenshots/Login.png" width="180"/></td>
+    <td><img src="Screenshots/Home.png" width="180"/></td>
+    <td><img src="Screenshots/Blogs.png" width="180"/></td>
+    <td><img src="Screenshots/SingleBlog.png" width="180"/></td>
+  </tr>
 
-### 🔑 Login Page
-![Login Page](Screenshots/Login.png)
-
-### 🏠 Home Page
-![Home Page](Screenshots/Home.png)
-
-### 📝 Single Blog Page
-![Single Blog Page](Screenshots/SingleBlog.png)
-
-### 👤 Creators Page
-![Creators Page](Screenshots/Creators.png)
-
-### 📄 About Page
-![About Page](Screenshots/About.png)
-
-### ☎️ Contact Page
-![Contact Page](Screenshots/Contact.png)
-
-### 📱 Mobile View
-![Mobile View 1](Screenshots/MobileView1.png)
-![Mobile View 2](Screenshots/MobileView2.png)
+  <tr>
+    <th>Creators</th>
+    <th>About</th>
+    <th>Contact</th>
+    <th>Mobile View 1</th>
+    <th>Mobile View 2</th>
+  </tr>
+  <tr>
+    <td><img src="Screenshots/Creators.png" width="180"/></td>
+    <td><img src="Screenshots/About.png" width="180"/></td>
+    <td><img src="Screenshots/Contact.png" width="180"/></td>
+    <td><img src="Screenshots/MobileView1.png" width="180"/></td>
+    <td><img src="Screenshots/MobileView2.png" width="180"/></td>
+  </tr>
+</table>
 
 
 
