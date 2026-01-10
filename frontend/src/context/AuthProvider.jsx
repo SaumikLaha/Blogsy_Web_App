@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const fetchProfile = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4001/api/users/my-profile",
+          `${import.meta.env.VITE_API_URL}/api/users/my-profile`,
           { withCredentials: true }
         );
         setProfile(data);
