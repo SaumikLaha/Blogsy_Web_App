@@ -188,11 +188,7 @@ npm run dev
 
 ## 👨‍💻 Author
 
-**Saumik Laha**
-## 👨‍💻 Author
-
 **SAUMIK LAHA**
-
 [GitHub](https://github.com/SaumikLaha) &nbsp;|&nbsp;
 [LinkedIn](https://www.linkedin.com/in/saumik-laha-530883381/)
 
