@@ -79,7 +79,7 @@ This project is built following **industry best practices** with **separated fro
 
 ---
 
-### 🖼️ Tools (Icons)
+### 🔧 Tech Stack Icons Used in Project
 | Tool | Icon |
 |------|------|
 | React.js | ![React](https://skillicons.dev/icons?i=react) |
