@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://blogsy-web-app.onrender.com"
