@@ -9,9 +9,9 @@ const createTokenAndSaveCookies = async (userId, res) => {
   );
 
   res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: false,        
-    sameSite: "lax",
+    httpOnly: true,  // secure 
+    secure: true,       // required for HTTPS deploy
+    sameSite: "none", // frontend-backend cross domain
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
