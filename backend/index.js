@@ -1,62 +1,69 @@
-import express from 'express';
-import dotenv from "dotenv"
-import mongoose from 'mongoose';
-import fileUpload from 'express-fileupload';
-import { v2 as cloudinary } from 'cloudinary';
-import cookieParser from 'cookie-parser';
-import userRoute from "./routes/user.route.js"
-import blogRoute from "./routes/blog.route.js"
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import fileUpload from "express-fileupload";
+import { v2 as cloudinary } from "cloudinary";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
+import userRoute from "./routes/user.route.js";
+import blogRoute from "./routes/blog.route.js";
 
-import cors from "cors"
+dotenv.config();
 
+const app = express();
 
-const app = express()
-dotenv.config()
+const PORT = process.env.PORT || 4001;
+const MONGO_URL = process.env.MONGO_URL;
 
-const port = process.env.PORT;
-const MONGO_URL=process.env.MONGO_URL
-
-//Middleware
+// Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-}));
 
-// File Upload Middleware
-app.use(fileUpload({
-  useTempFiles:true,
-  tempFileDir:"/tmp",
-})
+// CORS fix
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
 );
 
-// DB Code
-mongoose.connect(MONGO_URL)
-  .then(() => {
-    if (mongoose.connection.readyState === 1) {
-      console.log("Connected to MongoDB ✅");
-    }
+// File Upload Middleware
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
   })
-  .catch((error) => console.log("MongoDB connection error:", error));
+);
 
+// MongoDB Connection
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+    console.log("MongoDB Connected ✅");
+  })
+  .catch((err) => {
+    console.log("MongoDB connection error:", err);
+  });
 
-
-//Defining routes
+// Routes
 app.use("/api/users", userRoute);
 app.use("/api/blogs", blogRoute);
 
+// Cloudinary Config
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_SECRET_KEY,
+});
 
-//Cloudinary Code
-cloudinary.config({ 
-        cloud_name: process.env.CLOUD_NAME, 
-        api_key: process.env.CLOUD_API_KEY, 
-        api_secret: process.env.CLOUD_SECRET_KEY,
-    });
+// Test Route
+app.get("/", (req, res) => {
+  res.send("Blogsy Backend Running 🚀");
+});
 
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
-})
+// Server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
