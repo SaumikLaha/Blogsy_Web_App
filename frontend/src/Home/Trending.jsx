@@ -3,12 +3,15 @@ import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 function Trending() {
   const { blogs } = useAuth();
 
+  // ✅ Ensure blogs is always an array
+  const safeBlogs = Array.isArray(blogs) ? blogs : [];
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -26,67 +29,63 @@ function Trending() {
     },
   };
 
-
-
-  // ✅ Loading BEFORE carousel
-  if (!blogs || blogs.length === 0) {
+  // ✅ Loading state
+  if (safeBlogs.length === 0) {
     return (
       <div className="flex h-60 items-center justify-center">
-        ⏳✨ ᒪOᗩᗪIᑎG... ✨⏳
+        ⏳✨ LOADING... ✨⏳
       </div>
     );
   }
 
-
-
-
   return (
-    <div className=" container mx-auto">
-      <h1 className=" text-2xl font-semibold mb-4">TᖇEᑎᗪIᑎG</h1>
+    <div className="container mx-auto">
+      <h1 className="text-2xl font-semibold mb-4">TRENDING</h1>
+
       <Carousel responsive={responsive}>
-        {blogs && blogs.length > 0 ? (
-          blogs.slice(0, blogs.length).map((element) => {
-            return (
-              <div
-                key={element._id}
-                className="p-4 bg-white border border-gray-400 rounded-lg shadow-md mx-2"
-              >
-                <Link to={`/blog/${element._id}`}>
-                  <div className="relative">
+        {safeBlogs.map((element) => {
+          return (
+            <div
+              key={element._id}
+              className="p-4 bg-white border border-gray-400 rounded-lg shadow-md mx-2"
+            >
+              <Link to={`/blog/${element._id}`}>
+                <div className="relative">
+                  <img
+                    src={element.blogImage?.url}
+                    alt="blog"
+                    className="w-full h-56 object-cover rounded-t-lg"
+                  />
+
+                  <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                    {element.category}
+                  </div>
+                </div>
+
+                <div className="p-4 bg-gray-50 rounded-b-lg h-36 flex flex-col justify-between">
+                  <h1
+                    className="text-lg font-bold mb-2 overflow-hidden text-ellipsis"
+                    style={{ whiteSpace: "nowrap" }}
+                  >
+                    {element.title}
+                  </h1>
+
+                  <div className="flex items-center">
                     <img
-                      src={element.blogImage.url}
-                      alt="blog"
-                      className="w-full h-56 object-cover rounded-t-lg"
+                      src={element.adminPhoto}
+                      alt="author"
+                      className="w-10 h-10 rounded-full"
                     />
-                    <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
-                      {element.category}
-                    </div>
+
+                    <p className="ml-3 text-gray-400 text-sm">
+                      {element.adminName}
+                    </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-b-lg h-36 flex flex-col justify-between">
-                    <h1
-                      className="text-lg font-bold mb-2 overflow-hidden text-ellipsis"
-                      style={{ whiteSpace: "nowrap" }}
-                    >
-                      {element.title}
-                    </h1>
-                    <div className="flex items-center">
-                      <img
-                        src={element.adminPhoto}
-                        alt="author_avatar"
-                        className="w-10 h-10 rounded-full"
-                      />
-                      <p className="ml-3 text-gray-400 text-sm">
-                        {element.adminName}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })
-        ) : (
-          <div className=" flex h-screen items-center justify-center">⏳✨ ᒪOᗩᗪIᑎG... ✨⏳</div>
-        )}
+                </div>
+              </Link>
+            </div>
+          );
+        })}
       </Carousel>
     </div>
   );
