@@ -188,9 +188,9 @@ npm run dev
 
 ## 🌍 Live Demo
 
-🚧 Coming Soon...
+🔗 https://blogsy-web-app-d9bp.vercel.app
 
-(Live demo link will be added after deployment)
+Explore the live deployed version of the Blogsy blog platform.
 
 
 ## 👨‍💻 Author
