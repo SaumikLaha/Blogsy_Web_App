@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
         const { data } = await axios.get(
       `${import.meta.env.VITE_API_URL}/api/blogs/all-blogs`
     );
-        setBlogs(data);
+        setBlogs(Array.isArray(data) ? data : data.blogs || []);
       } catch (error) {
         console.log(error);
       }
