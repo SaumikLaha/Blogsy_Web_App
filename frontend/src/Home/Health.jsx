@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const HealthLifestyle = () => {
   const { blogs } = useAuth();
 
-  const healthBlogs = blogs.filter(
-    (blog) => blog.category === "Health & Lifestyle"
-  );
+  const healthBlogs = Array.isArray(blogs)
+  ? blogs.filter((blog) => blog.category === "Health & Lifestyle")
+  : [];
 
   // ✅ FULL PAGE LOADING
   if (blogs.length === 0) {
